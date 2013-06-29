@@ -6,7 +6,6 @@
 autopublish
 insecure
 preserve-inputs
-foundation
 accounts-ui
 accounts-password
 jquery

@@ -4,7 +4,7 @@
     "branch": "master"
   },
   "packages": {
-    "foundation": {},
-    "jquery-ui": {}
+    "jquery-ui": {},
+    "zurb-foundation": {}
   }
 }
