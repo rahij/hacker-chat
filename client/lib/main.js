@@ -46,7 +46,6 @@
             // do jquery stuff to show the chatrooms in tab format
             // from here go to settings template ....
         },
-        ,
         'click .show_settings' : function(){
             
         
