@@ -61,7 +61,7 @@
         }
 
 
-    }
+    });
     
     Template.profile.userProfile= function(){
             // get userId to load from user profile collection
