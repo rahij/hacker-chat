@@ -8,7 +8,9 @@
   {{#if currentUser}}
     {{> dashboard}}
     {{> chat}}
-    {{> addUsers}}
+    <div id="addUsers">
+      {{> addUsers}}
+    </div>
     {{> newRoom}}
     {{> questions}}
     {{> initialSurvey}}

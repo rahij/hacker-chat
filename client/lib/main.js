@@ -36,9 +36,10 @@
             var q =chat.find({room_id : room_id}).fetch();
             var z = [];
             console.log(q);
+            var user = Meteor.users.findOne({ _id: Meteor.userId() });
             for(var i = 0; i < q.length; i++){
                 console.log(q[i]);
-                z.push({email:email, msg:q[i].msg});
+                z.push({email:user.emails[0].address, msg:q[i].msg});
             }
             return z;
         }

@@ -11,7 +11,9 @@ Template.newRoom.events({
 });
 
 Template.addUsers.searchResults = function() {
-  return profiles.find();
+  return profiles.find({
+    keywords: $("input[name=search]").val()
+  });
 };
 
 Template.addUsers.events({
@@ -22,6 +24,10 @@ Template.addUsers.events({
       room.users.push(user_id);
       rooms.update(room._id, { $set: { users: room.users } });
     }
+  },
+
+  'change input[name=search]': function() {
+    $("#addUsers").html(Meteor.render(Template.addUsers));
   }
 });
 
