@@ -8,7 +8,6 @@
   {{#if currentUser}}
     {{> chat}}
     {{> questions}}
-    <div class="hide-for-testing">
     {{> newRoom}}
     {{> dashboard}}
     <div id="addUsers">
@@ -17,10 +16,8 @@
     {{> initialSurvey}}
     {{>new_announcement}}
   {{else}}
-    <div class="hide-for-testing">
   {{/if}}
 
   {{> announcements}}
-</div>
   {{> footer}}
 </body>
