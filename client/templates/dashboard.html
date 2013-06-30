@@ -1,5 +1,11 @@
 <template name="dashboard">
-{{#each currentEvents}}
-    
-{{/each}}
+<div class="dashboard">
+{{#if currentUser}}
+    {{#each currentEvents}}
+        
+    {{/each}}
+    {{else}}
+    <p>Please login</p>
+{{/if}}
+</div>
 </template>
