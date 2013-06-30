@@ -1,7 +1,3 @@
-Template.questions.loggedIn = function() {
-  return Meteor.userId();
-};
-
 Template.questions.unansweredQuestions = function() {
   return Questions.find({ $where: function() {
     return this.answeredBy.indexOf(Meteor.userId()) < 0;

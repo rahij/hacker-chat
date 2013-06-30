@@ -26,3 +26,10 @@ Meteor.methods({
       answer: params.answer});
   }
 });
+
+// fixtures 
+
+if (rooms.find().count() === 0) {
+  rooms.insert({ title: "Room 1", location: "San Francisco" });
+  rooms.insert({ title: "Room 2", location: "San Francisco" });
+}

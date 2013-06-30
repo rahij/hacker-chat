@@ -57,8 +57,9 @@
 //            var z = [];
             console.log(q.length);
             for(var i = 0; i < q.length; i++){
-                console.log(i);
-                z.push({email:email, msg:q[i].msg});
+                console.log(q[i]);
+                var author = Meteor.users.findOne({ _id: q[i].user_id });
+                z.push({email:author.emails[0].address, msg:q[i].msg});
             }
             console.log(z);
             return z;
@@ -68,11 +69,7 @@
     };
 
     Template.chat.showRooms = function(){
-    // example json response (mongo) for available chat rooms
-        return [
-            { _id : 'asv-sasz', title: 'Chat room 1', location: 'San Francisco'},
-            { _id : 'asdx-sasz', title: 'Chat room 2', location: 'San Francisco'}
-            ];
+      return rooms.find();
     }
 
     Template.dashboard.events({

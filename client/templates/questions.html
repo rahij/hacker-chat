@@ -1,13 +1,11 @@
 <template name="questions">
-  {{#if loggedIn}}
-    <h3>Questions</h3>
-    <ul class="questions">
-      {{#each unansweredQuestions}}{{> question}}{{/each}}
-    </ul>
+  <h3>Questions</h3>
+  <ul class="questions">
+    {{#each unansweredQuestions}}{{> question}}{{/each}}
+  </ul>
 
-    <h3>Answers</h3>
-    <ul class="answers">
-      {{#each answers}}{{> answer}}{{/each}}
-    </ul>
-  {{/if}}
+  <h3>Answers</h3>
+  <ul class="answers">
+    {{#each answers}}{{> answer}}{{/each}}
+  </ul>
 </template>

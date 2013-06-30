@@ -1,23 +1,23 @@
 <template name="chat">
-    <div class="chat">
-		<div class="chat-sidebar">
-	    	{{#each showRooms}}
-	     		<a href="#" id="{{_id}}" class="show_chatroom">{{title}}</a>
-			{{/each}}
-		</div>
-		<div class="chat-main-view">
-			<div class="chat-messages">
-                {{#each getMessages}}
-            	<div class="chat-single-message">
-					<span class="{{user_id}}" id="{{_id}}">{{email}}</span>
-					<span class="chat-single-message-content">{{msg}}</span>
-				</div>
-                {{/each}}
-			</div>
-			<div class="chat-new-message">
-				<textarea class="chat-new-message-content"></textarea>
-				<input type="submit" value="Submit" class="submit_chat"/> 
-			</div>
-		</div>
+<div class="chat">
+  <div class="chat-sidebar">
+    {{#each showRooms}}
+    <a href="#" id="{{_id}}" class="show_chatroom">{{title}}</a>
+    {{/each}}
+  </div>
+  <div class="chat-main-view">
+    <div class="chat-messages">
+      {{#each getMessages}}
+      <div class="chat-single-message">
+        <span class="{{user_id}}" id="{{_id}}">{{email}}</span>
+        <span class="chat-single-message-content">{{msg}}</span>
+      </div>
+      {{/each}}
     </div>
+    <div class="chat-new-message">
+      <textarea class="chat-new-message-content"></textarea>
+      <input type="submit" value="Submit" class="submit_chat"/> 
+    </div>
+  </div>
+</div>
 </template>
