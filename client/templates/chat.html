@@ -1,23 +1,13 @@
 <template name="chat">
     <div class="chat">
-    	<div class="chat-sidebar">
-    		<div class="chat-room-name">Chat1</div>
-    		<div class="chat-room-name">Chat2</div>
-		</div>
 		<div class="chat-main-view">
 			<div class="chat-messages">
-				<div class="chat-single-message">
-					<span class="chat-single-message-owner-name">Rahij: </span>
-					<span class="chat-single-message-content">Hey! Sup?</span>
+                {{#each getMessages}}
+            	<div class="chat-single-message">
+					<span class="{{user_id}}" id="{{_id}}">{{user_id}}</span>
+					<span class="chat-single-message-content">{{msg}}</span>
 				</div>
-				<div class="chat-single-message">
-					<span class="chat-single-message-owner-name">Rahij:</span>
-					<span class="chat-single-message-content">Hey! Sup?</span>
-				</div>
-				<div class="chat-single-message">
-					<span class="chat-single-message-owner-name">Rahij:</span>
-					<span class="chat-single-message-content">Hey! Sup?</span>
-				</div>
+                {{/each}}
 			</div>
 			<div class="chat-new-message">
 				<textarea class="chat-new-message-content"></textarea>

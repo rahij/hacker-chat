@@ -1,11 +1,7 @@
 <template name="dashboard">
 <div class="dashboard">
-{{#if currentUser}}
-    {{#each currentEvents}}
-        
+    {{#each showRooms}}
+     <a href="#" id="{{_id}}" class="show_chatroom">{{title}}</a>
     {{/each}}
-    {{else}}
-    <p>Please login</p>
-{{/if}}
 </div>
 </template>

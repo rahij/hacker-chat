@@ -7,7 +7,7 @@
         
     };
 
-    Template.intial_survey.events({
+    Template.modals.events({
         'click .submit_survey' : function (){
             alert('you are submitting your inital survey');
         }
@@ -19,23 +19,45 @@
             // probably set a session variable that refers to the
             // appropriate chat room
             alert('you are writing to chat database ');
-            console.log(tmpl.find(".chat-new-message-content").value);
+            var room_id = Session.get('room_id'), user_id = Meteor.userId();
+                
+            if(room_id && user_id){
+                msg = tmpl.find('.chat-new-message-content').value;
+                if(msg){
+                    console.log('inserting');
+                    chat.insert({msg : msg, room_id:room_id,user_id :user_id});
+                    }
+                
+            }
+            
+//            console.log(tmpl.find(".chat-new-message-content").value);
         }
 
     });
 
-    Template.chat.showRooms = function(){
+    Template.chat.getMessages = function(){
+        var room_id = Session.get('room_id');
+        if(room_id){
+            return chat.find({room_id : room_id});
+        }
+    };
+
+    Template.dashboard.showRooms = function(){
     // example json response (mongo) for available chat rooms
         return [
             { _id : 'asv-sasz', title: 'Chat room 1', location: 'San Francisco'},
             { _id : 'asdx-sasz', title: 'Chat room 2', location: 'San Francisco'}
             ];
-            
-    
     }
 
     Template.dashboard.events({
-        'click .show_chatrooms' : function(){
+        'click .show_chatroom' : function(evt,tmpl){
+            console.log(tmpl.data);
+            var room_id = tmpl.find('.show_chatroom').id;
+            console.log(room_id);
+            alert('setting session to ' + room_id);
+            Session.set('room_id',room_id);
+            console.log(room_id);
             // do jquery stuff to show the chatrooms in tab format
             alert('show chat rooms based on all available chat rooms');
         },
