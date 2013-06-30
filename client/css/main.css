@@ -1,42 +1,89 @@
-/* CSS declarations go here */
-.chat{
-	width: 100%;
-	height: 200px;
-    scroll:auto;
+.hide-for-testing {
+	display: none;
 }
 
-.chat-sidebar, .chat-main-view{
-	float: left;
-	padding-right: 10px;
+
+
+h1, h2, h3, h4, h5, h6, a {
+	color: #fd3f1b;
 }
 
-.chat-sidebar{
-	width: 20%;
+a:hover {
+	color: #b11d02;
 }
 
-.chat-sidebar a{
+button, .button {
+	background-color: #fd3f1b;
+	border-color: #b11d02;
+}
+
+button:hover, .button:hover {
+	background-color: #b11d02;
+}
+
+
+
+
+
+
+.header {
+	position: relative;
+}
+
+.header h1 {
+	margin: 0;
+}
+
+div#login-buttons {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+ul.side-menu {
+	list-style: none;
+	border: 1px solid #aaa;
+	border-bottom: none;
+}
+
+.side-menu li {
 	display: block;
+	padding: 15px 20px;
+	border-bottom: 1px solid #aaa;
 }
 
-.chat-main-view{
-	width: 80%;
-	height: 100%;
+.side-menu li:hover {
+	padding-left: 10px;
+	border-left: 10px solid #fd3f1b;
 }
 
-.chat-room-name{
+
+
+.row.chat-messages {
+	border: 1px solid #aaa;
+	margin: 0px 0px 15px !important;
 	padding: 5px;
-	border: 1px solid black;
+	min-height: 500px;
 }
 
-.chat-messages{
-	min-height: 80%;
+.chat-messages .chat-single-message {
+	border: 1px solid blue;
+	margin-bottom: 5px;
 }
 
-.chat-single-message{
-	min-height: 30px;
-	border: 1px solid black;
+.chat-messages {
+	line-height: 1.5;
 }
 
-.chat-new-message input[type="submit"]{
-	float: right;
+.chat-messages span.name {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+ul.questions, ul.answers {
+	list-style: none;
+}
+
+ul.questions .button, ul.answers .button {
+	margin-right: 5px;
 }

@@ -6,17 +6,21 @@
   {{> header}}
   
   {{#if currentUser}}
-    {{> dashboard}}
     {{> chat}}
+    {{> questions}}
+    <div class="hide-for-testing">
+    {{> newRoom}}
+    {{> dashboard}}
     <div id="addUsers">
       {{> addUsers}}
     </div>
-    {{> newRoom}}
-    {{> questions}}
     {{> initialSurvey}}
     {{>new_announcement}}
+  {{else}}
+    <div class="hide-for-testing">
   {{/if}}
 
   {{> announcements}}
+</div>
   {{> footer}}
 </body>

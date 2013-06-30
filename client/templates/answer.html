@@ -1,10 +1,10 @@
 <template name="answer">
   <li class="question row">
-    <span class="text large-9 columns">{{text}}</span>
-    <span class="answer large-3 columns">
-      <a class="button disabled {{secondaryOrSuccess}}">Yes</a>
-      <a class="button disabled {{secondaryOrAlert}}">Nope</a>
-     </span>
+    <div class="text large-9 columns">{{text}}</div>
+    <div class="answer large-3 columns">
+      <a class="button small radius right disabled {{secondaryOrAlert}}">Nope</a>
+      <a class="button small radius right disabled {{secondaryOrSuccess}}">Yes</a>
+     </div>
   </li>
 </template>
 

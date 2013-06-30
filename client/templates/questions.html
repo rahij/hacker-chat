@@ -1,31 +1,35 @@
 <template name="questions">
-  <h3>Questions</h3>
-  <ul class="questions">
-    {{#each unansweredQuestions}}{{> question}}{{/each}}
-  </ul>
+  <div class="row">
+    <div class="small-12 columns">
+      <h3>Questions</h3>
+      <ul class="questions">
+        {{#each unansweredQuestions}}{{> question}}{{/each}}
+      </ul>
 
-  <h3>Answers</h3>
-  <ul class="answers">
-    {{#each answers}}{{> answer}}{{/each}}
-  </ul>
+      <h3>Answers</h3>
+      <ul class="answers">
+        {{#each answers}}{{> answer}}{{/each}}
+      </ul>
 
-  <form class="new-question">
-    <fieldset>
-      <legend>Find people to talk to</legend>
+      <form class="new-question">
+        <fieldset>
+          <legend>Find people to talk to</legend>
 
-      <div class="row">
-        <div class="large-12 columns">
-          <label>What do you want to ask?</label>
-          <input type="text" name="text" placeholder="Do you... ?">
+          <div class="row">
+            <div class="large-12 columns">
+              <label>What do you want to ask?  Users who reply 'yes' will be added to your chat room.</label>
+              <input type="text" name="text" placeholder="Question">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <input type="submit" class="button small radius" value="Ask">
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="large-12 columns">
-          <input type="submit" class="button" value="Ask">
-        </div>
-      </div>
+      </form>
     </div>
-  </form>
+  </div>
 </template>
 
