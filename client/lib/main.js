@@ -32,9 +32,9 @@ Template.chat.events({
         }
     },
     'click .side-menu a' : function(evt, tmpl){
-        console.log(evt.srcElement);
+        var ele = evt.target || evt.srcElement;
         $(".side-menu li").removeClass("active");
-        $(evt.srcElement).addClass('active');
+        $(ele).addClass('active');
     }
 
 });
