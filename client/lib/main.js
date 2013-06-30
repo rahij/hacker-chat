@@ -8,13 +8,6 @@
         
     };
 
-    Template.initialSurvey.events({
-        'click .submit_survey' : function (){
-            alert('you are submitting your inital survey');
-        }
-
-    });
-
     Template.chat.events({
         'click .show_chatroom' : function(evt,tmpl){
             Session.set('room_id',this._id);

@@ -54,6 +54,18 @@ Meteor.methods({
         }
       });
     }
+  },
+
+  saveProfile: function(params) {
+    return profiles.insert({
+      user_id: Meteor.user()._id,
+      name: params.name,
+      school: params.school,
+      company: params.company,
+      title: params.title,
+      bio: params.bio,
+      keywords: [ params.name, params.school, params.company, params.title, params.bio ]
+    });
   }
 });
 

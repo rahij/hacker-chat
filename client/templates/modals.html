@@ -1,14 +1,11 @@
 <template name="initialSurvey">
-
-<div id="initialSurvey" class="reveal-modal">
-  <form class="custom">
-  	<input type="text" placeholder="Name" />
-  	<input type="text" placeholder="School" />
-  	<input type="text" placeholder="Company" />
-  	<input type="text" placeholder="Job Title" />
-  	<input type="text" placeholder="Bio/About Me" />
+  <form class="custom profile reveal-modal">
+    <input type="text" name="name" placeholder="Name" />
+    <input type="text" name="school" placeholder="School" />
+    <input type="text" name="company" placeholder="Company" />
+    <input type="text" name="title" placeholder="Job Title" />
+    <input type="text" name="bio" placeholder="Bio/About Me" />
+    <input type="submit" value="Save Profile" class="button">
+    <a class="close-reveal-modal">&#215;</a>
   </form>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
-
 </template>
