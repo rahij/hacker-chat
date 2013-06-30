@@ -6,13 +6,14 @@
   {{> header}}
   
   {{#if currentUser}}
-  {{> dashboard}}
-  {{> chat}}
-  
-  {{> initialSurvey}}
+      {{> dashboard}}
+      {{> chat}}
+      
+      {{> initialSurvey}}
 
-  
+    {{>new_announcement}}
   {{/if}}
+
   {{> announcements}}
   {{> footer}}
 </body>
