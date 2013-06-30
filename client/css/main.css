@@ -159,6 +159,7 @@ ul.questions .button, ul.answers .button {
 .chat-messages .avatar img {
   border-radius: 100%;
   border: 1px solid #ddd;
+  max-width: 50px;
 }
 
 .twitter{
@@ -173,4 +174,19 @@ ul.questions .button, ul.answers .button {
 	float: left;
 	width: 50px;
 	padding-left: 10px;
+}
+
+
+.announcements ul {
+	list-style: none;
+}
+
+.announcements ul li {
+	padding: 10px;
+	margin: 5px auto;
+	border: 1px solid #aaa;
+}
+
+.announcements ul li span {
+	float: right;
 }

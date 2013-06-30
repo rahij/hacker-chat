@@ -9,11 +9,15 @@
 </template>
 
 <template name ="new_announcement">
-  <div class="new_announcement">
+  <div class="row new_announcement">
     <form class="new_announcement">
-      <input class="msg" placeholder="New Announcement..." />
-      <input type="submit" class="button small inline radius add_announcement" />
-      <a href="#" class="cancel">Cancel</a>
+      <div class="small-9 columns">
+        <input type="text" class="expand msg" placeholder="New Announcement..." />
+      </div>
+      <div class="small-3 columns">
+        <input type="submit" class="button small inline radius add_announcement" />
+        <a href="#" class="cancel">Cancel</a>
+      </div>
     </form>
   </div>
 </template>
