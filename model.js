@@ -7,3 +7,5 @@ rooms = new Meteor.Collection("rooms");
 events = new Meteor.Collection("events");
 
 teams = new Meteor.Collection("teams");
+
+announcements = new Meteor.Collection("announcements");

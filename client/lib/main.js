@@ -63,6 +63,11 @@
             ];
     }
 
+
+    Template.announcements.getMsg = function (){
+        return announcements.find({});
+    };
+
     Template.dashboard.events({
         'click .show_profile' : function(){
             alert('show profile using userId');
