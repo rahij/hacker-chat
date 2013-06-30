@@ -93,33 +93,15 @@ Template.announcements.getAnnouncements = function(){
 Template.new_announcement.events({
     'click .cancel' : function(evt,tmpl){
         $('.new_announcement').hide();
-
     },
 
-    'click .add_announcement': function(evt,tmpl){
-          
-          var msg=tmpl.find(".msg").value,
-          msg=tmpl.find(".msg").value, visiblity=tmpl.find(".visibility").value;
-          
-          if(typeof visibility != 'undefined'){
-              var q = announcements.insert({msg:msg,visibility:visibility,user_id: Meteor.userId()});
-          }else
-              var q = announcements.insert({msg:msg,user_id: Meteor.userId()});
-
-          
-//What does pepsi wild cherry taste like with crown royal?
-          
-          if(typeof q == 'undefined' || !q)
-            alert('Problem with insertion');
-          else
-            // Mongo query insertions always return mongo_id of the record
-            Session.set('last_insert',q);
-          
-         $('.new_announcement').hide();
-
-    }
-    
-
+  'click .add_announcement': function(evt,tmpl){
+    evt.preventDefault();
+    var msg=tmpl.find(".msg").value;
+    announcements.insert({msg:msg,user_id: Meteor.userId()});
+    //What does pepsi wild cherry taste like with crown royal?
+    $('.new_announcement').hide();
+  }
 });
 
 
