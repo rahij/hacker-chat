@@ -35,7 +35,30 @@
         var room_id = Session.get('room_id');
         
         if(room_id){
-            return chat.find({room_id : room_id});
+            var q =chat.find({room_id : room_id}).fetch();
+            
+            console.log(q);
+            
+//            Meteor.user.currentUserEmail()
+            var email = Meteor.users.findOne({_id:Meteor.userId()});
+            // ({}).emails[0].address
+//            Meteor.email();
+            email = email.emails[0].address;
+//            console.log(email[0]);
+            console.log(email);
+            
+            var z = [];
+            
+//            var z = [];
+            console.log(q.length);
+            for(var i = 0; i < q.length; i++){
+                console.log(i);
+                z.push({email:email, msg:q[i].msg});
+            }
+            console.log(z);
+            return z;
+            
+            
         }
     };
 
@@ -50,10 +73,8 @@
     Template.dashboard.events({
         'click .show_chatroom' : function(evt,tmpl){
             Session.set('room_id',this._id);
-            console.log(this);
 //            console.log(room_id);
             // do jquery stuff to show the chatrooms in tab format
-            alert('show chat rooms based on all available chat rooms');
         },
         'click .show_profile' : function(){
             alert('show profile using userId');
