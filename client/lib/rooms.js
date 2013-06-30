@@ -26,8 +26,5 @@ Template.addUsers.events({
     }
   },
 
-  'change input[name=search]': function() {
-    $("#addUsers").html(Meteor.render(Template.addUsers));
-  }
 });
 

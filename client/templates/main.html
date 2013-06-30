@@ -1,0 +1,43 @@
+<template name="main">
+  {{> header}}
+
+  {{#if currentUser}}
+    <div class="row">
+      <div class="large-3 columns chat-sidebar">
+        <ul class="side-menu">
+          <a href="#" id="showDashboard" data-target="dashboard" class="show_dashboard"><li>Dashboard</li></a>
+          <a href="#" id="showAnnouncements" data-target="announcements" class="show_announcements"><li>Announcements</li></a>
+          {{#each activeRooms}}
+            <a href="#" class="show_chatroom" data-target="chat" data-room-id="{{_id}}"><li>{{title}}</li></a>
+          {{/each}}
+          <a href="#" id="showPolls" data-target="polls" class="show_polls"><li>Polls</li></a>
+          <a href="#" id="showCreate" data-target="newRoom" class="show_create"><li>Create New Chat</li></a>
+        </ul>
+      </div>
+
+      <div class="large-9 columns chat-main-view main-view">
+        <section id="dashboard">
+          {{> dashboard}}
+        </section>
+        <section id="announcements">
+          {{> announcements}}
+          {{> new_announcement}}
+        </section>
+        <section id="chat">
+          {{> chat}}
+        </section>
+        <section id="polls">
+          {{> questions}}
+        </section>
+        <section id="newRoom">
+          {{> newRoom}}
+        </section>
+      </div>
+    </div>
+
+    {{> initialSurvey}}
+
+  {{/if}}
+
+  {{> footer}}
+</template>

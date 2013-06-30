@@ -15,6 +15,7 @@ Template.footer.rendered= function(){
 };
 
 Template.chat.events({
+<<<<<<< HEAD
     'click .show_chatroom' : function(evt,tmpl){
         Session.set('room_id',this._id);
     },
@@ -37,6 +38,25 @@ Template.chat.events({
         $(ele).addClass('active');
     }
 
+=======
+  'click .submit_chat' : function (evt, tmpl){
+      // probably set a session variable that refers to the
+      // appropriate chat room
+      var room_id = Session.get('room_id'), user_id = Meteor.userId();
+      if(room_id && user_id){
+          msg = tmpl.find('.chat-new-message-content').value;
+          if(msg){
+              console.log('inserting');
+              var user = Meteor.users.findOne({ _id: Meteor.userId() });
+              chat.insert({msg : msg, room_id:room_id,user_id :user.emails[0].address});
+              }
+      }
+  },
+
+  'change input[name=search]': function() {
+    $(".results-list").html(Meteor.render(Template.addUsers));
+  }
+>>>>>>> 57191ae3f93ec2accbf286737ee4cdb4db0bb6b3
 });
 
 Template.chat.getMessages = function(){
@@ -48,12 +68,34 @@ Template.chat.getMessages = function(){
     }
 };
 
-Template.chat.showRooms = function(){
+Template.main.activeRooms = function(){
   return rooms.find({ $where: function() {
     return this.users.indexOf(Meteor.userId()) > -1;
   }});
-}
+};
 
+Template.main.rendered = function() {
+  $("section").hide();
+  $("section#chat").show();
+  if (Session.get("room_id")) {
+    $("a[data-room-id=" + Session.get("room_id") + "] li").addClass("active");
+  }
+};
+
+Template.main.events({
+  'click .side-menu a': function(e) {
+    $("section").hide();
+    $("section#" + $(e.target).parent().data("target")).show();
+
+    $(".side-menu li").removeClass("active");
+    $(e.srcElement).addClass('active');
+  },
+
+  'click .show_chatroom' : function(evt,tmpl){
+    Session.set('room_id', $(evt.target).parent().data("roomId"));
+    evt.preventDefault();
+  }
+});
 
 Template.announcements.getMsg = function (){
     return announcements.find({});

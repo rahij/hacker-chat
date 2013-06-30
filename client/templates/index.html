@@ -3,21 +3,5 @@
 </head>
 
 <body>
-  {{> header}}
-  
-  {{#if currentUser}}
-    {{> chat}}
-    {{> questions}}
-    {{> newRoom}}
-    {{> dashboard}}
-    <div id="addUsers">
-      {{> addUsers}}
-    </div>
-    {{> initialSurvey}}
-    {{>new_announcement}}
-  {{else}}
-  {{/if}}
-
-  {{> announcements}}
-  {{> footer}}
+  {{> main}}
 </body>
