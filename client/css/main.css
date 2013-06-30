@@ -115,6 +115,12 @@ ul.side-menu {
 	border-left: 10px solid #fd3f1b;
 }
 
+.side-menu li img {
+	display: inline-block;
+	max-width: 20px;
+	margin-right: 10px;
+	margin-top: -2px;
+}
 
 
 .row.chat-messages {
