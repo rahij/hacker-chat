@@ -14,6 +14,10 @@ Template.footer.rendered= function(){
     
 };
 
+Template.chat.rendered = function() {
+  $(".chat-new-message-content").focus();
+}
+
 Template.chat.events({
   'click .submit_chat' : function (evt, tmpl){
       // probably set a session variable that refers to the
@@ -27,6 +31,7 @@ Template.chat.events({
               chat.insert({msg : msg, room_id:room_id,user_id :user.emails[0].address});
               }
       }
+      evt.preventDefault();
   },
 
   'change input[name=search]': function() {
