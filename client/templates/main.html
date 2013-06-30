@@ -5,12 +5,12 @@
     <div class="row">
       <div class="large-3 columns chat-sidebar">
         <ul class="side-menu">
-          <a href="#" id="showDashboard" data-target="dashboard" class="show_dashboard"><li>Dashboard</li></a>
-          <a href="#" id="showAnnouncements" data-target="announcements" class="show_announcements"><li>Announcements</li></a>
+          <a href="#" id="showDashboard" data-target="dashboard" class="show_dashboard"><li><img src="/home.png">Dashboard</li></a>
+          <a href="#" id="showAnnouncements" data-target="announcements" class="show_announcements"><li><img src="/info.png">Announcements</li></a>
+          <a href="#" id="showPolls" data-target="polls" class="show_polls"><li><img src="/questions.png">Polls</li></a>
           {{#each activeRooms}}
-            <a href="#" class="show_chatroom" data-target="chat" data-room-id="{{_id}}"><li>{{title}}</li></a>
+            <a href="#" class="show_chatroom" data-target="chat" data-room-id="{{_id}}"><li><img src="/chat.png">{{title}}</li></a>
           {{/each}}
-          <a href="#" id="showPolls" data-target="polls" class="show_polls"><li>Polls</li></a>
           <a href="#" id="showCreate" data-target="newRoom" class="show_create"><li>Create New Chat</li></a>
         </ul>
       </div>
