@@ -1,1 +1,37 @@
 /* CSS declarations go here */
+.chat{
+	width: 100%;
+	height: 700px;
+}
+
+.chat-sidebar, .chat-main-view{
+	float: left;
+	padding-right: 10px;
+}
+
+.chat-sidebar{
+	width: 20%;
+}
+
+.chat-main-view{
+	width: 80%;
+	height: 100%;
+}
+
+.chat-room-name{
+	padding: 5px;
+	border: 1px solid black;
+}
+
+.chat-messages{
+	min-height: 80%;
+}
+
+.chat-single-message{
+	min-height: 30px;
+	border: 1px solid black;
+}
+
+.chat-new-message input[type="submit"]{
+	float: right;
+}

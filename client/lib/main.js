@@ -1,19 +1,6 @@
-    Template.hello.greeting = function () {
-        return "Welcome to cloaked-hipster.";
-    };
-
-    Template.hello.events({
-        'click input' : function () {
-        // template data, if any, is available in 'this'
-        if (typeof console !== 'undefined')
-        console.log("You pressed the button");
-        }
-    });
-
-
     Template.footer.rendered= function(){
     // hide all objects that are not to be shown when logged in
-        $('.chat').hide();
+        // $('.chat').hide();
         $('.profile').hide();
         // check that user has a profile if not show inital survey
         $('.inital_survey').hide();
@@ -28,10 +15,11 @@
     });
 
     Template.chat.events({
-        'click .submit_chat' : function (){
+        'click .submit_chat' : function (evt, tmpl){
             // probably set a session variable that refers to the
             // appropriate chat room
             alert('you are writing to chat database ');
+            console.log(tmpl.find(".chat-new-message-content").value);
         }
 
     });
@@ -76,4 +64,3 @@
     Template.profile.userProfile= function(){
             // get userId to load from user profile collection
     };
-
