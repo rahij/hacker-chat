@@ -1,10 +1,23 @@
 <template name="announcements">
-	<div class="announcemments">
+	<div class="announcements">
         <ul>
         {{#each getAnnouncements}}
-            <li>{{msg}}</li>
+            <li>{{{msg}}}</li>
         {{/each}}
         </ul>
-		Random announcement content! Dinner is served!
 	<div>
+</template>
+
+
+<template name ="new_announcement">
+    <div class="new_announcement">
+        <form class="new_announcement">
+            <input class="msg" placeholder="Type in announcement (html permitted)" />
+            <input type="submit" class = "add_announcement" />
+            <input type="radio" class="visibility" value='true' />True
+            <input type="radio" class="visibility" value='false' />False
+            
+            <a href="#" class="cancel" >Cancel</a>
+        </form>
+    </div>
 </template>

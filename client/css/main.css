@@ -1,7 +1,8 @@
 /* CSS declarations go here */
 .chat{
 	width: 100%;
-	height: 700px;
+	height: 200px;
+    scroll:auto;
 }
 
 .chat-sidebar, .chat-main-view{
