@@ -14,6 +14,11 @@ Template.footer.rendered= function(){
     
 };
 
+Template.twitter.rendered = function() {
+
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+}
+
 Template.chat.rendered = function() {
   $(".chat-new-message-content").focus();
 }

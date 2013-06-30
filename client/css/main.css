@@ -154,3 +154,13 @@ ul.questions .button, ul.answers .button {
   border-radius: 100%;
   border: 1px solid #ddd;
 }
+
+.twitter{
+	float: left;
+}
+
+.instagram{
+	float: left;
+	width: 50px;
+	padding-left: 10px;
+}
