@@ -26,7 +26,8 @@ Template.chat.events({
             msg = tmpl.find('.chat-new-message-content').value;
             if(msg){
                 console.log('inserting');
-                chat.insert({msg : msg, room_id:room_id,user_id :user_id});
+                var user = Meteor.users.findOne({ _id: Meteor.userId() });
+                chat.insert({msg : msg, room_id:room_id,user_id :user.emails[0].address});
                 }
         }
     }
@@ -38,14 +39,7 @@ Template.chat.getMessages = function(){
     
     if(room_id){
         var q =chat.find({room_id : room_id}).fetch();
-        var z = [];
-        console.log(q);
-        var user = Meteor.users.findOne({ _id: Meteor.userId() });
-        for(var i = 0; i < q.length; i++){
-            console.log(user);
-            z.push({email: user.emails[0].address, msg:q[i].msg});
-        }
-        return z;
+        return q;
     }
 };
 
