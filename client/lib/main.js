@@ -19,30 +19,6 @@ Template.chat.rendered = function() {
 }
 
 Template.chat.events({
-<<<<<<< HEAD
-    'click .show_chatroom' : function(evt,tmpl){
-        Session.set('room_id',this._id);
-    },
-    'click .submit_chat' : function (evt, tmpl){
-        // probably set a session variable that refers to the
-        // appropriate chat room
-        var room_id = Session.get('room_id'), user_id = Meteor.userId();
-        if(room_id && user_id){
-            msg = tmpl.find('.chat-new-message-content').value;
-            if(msg){
-                console.log('inserting');
-                var user = Meteor.users.findOne({ _id: Meteor.userId() });
-                chat.insert({msg : msg, room_id:room_id,user_id :user.emails[0].address});
-                }
-        }
-    },
-    'click .side-menu a' : function(evt, tmpl){
-        var ele = evt.target || evt.srcElement;
-        $(".side-menu li").removeClass("active");
-        $(ele).addClass('active');
-    }
-
-=======
   'click .submit_chat' : function (evt, tmpl){
       // probably set a session variable that refers to the
       // appropriate chat room
@@ -61,7 +37,6 @@ Template.chat.events({
   'change input[name=search]': function() {
     $(".results-list").html(Meteor.render(Template.addUsers));
   }
->>>>>>> 57191ae3f93ec2accbf286737ee4cdb4db0bb6b3
 });
 
 Template.chat.getMessages = function(){
