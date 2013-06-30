@@ -87,3 +87,12 @@ ul.questions, ul.answers {
 ul.questions .button, ul.answers .button {
 	margin-right: 5px;
 }
+
+.chat-messages .row {
+  margin-bottom: 20px;
+}
+
+.chat-messages .avatar img {
+  border-radius: 100%;
+  border: 1px solid #ddd;
+}

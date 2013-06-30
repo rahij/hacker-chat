@@ -43,6 +43,10 @@ Template.chat.getMessages = function(){
     }
 };
 
+Template.chat.emailHash = function() {
+  return md5(this.user_id);
+};
+
 Template.main.activeRooms = function(){
   return rooms.find({ $where: function() {
     return this.users.indexOf(Meteor.userId()) > -1;
