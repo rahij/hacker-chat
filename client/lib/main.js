@@ -10,6 +10,16 @@
         }
     });
 
+
+    Template.footer.rendered= function(){
+    // hide all objects that are not to be shown when logged in
+        $('.chat').hide();
+        $('.profile').hide();
+        // check that user has a profile if not show inital survey
+        $('.inital_survey').hide();
+        
+    };
+
     Template.intial_survey.events({
         'click .submit_survey' : function (){
             alert('you are submitting your inital survey');
