@@ -1,5 +1,10 @@
 <template name="chat">
     <div class="chat">
+		<div class="chat-sidebar">
+	    	{{#each showRooms}}
+	     		<a href="#" id="{{_id}}" class="show_chatroom">{{title}}</a>
+			{{/each}}
+		</div>
 		<div class="chat-main-view">
 			<div class="chat-messages">
                 {{#each getMessages}}

@@ -16,6 +16,11 @@
     });
 
     Template.chat.events({
+        'click .show_chatroom' : function(evt,tmpl){
+            Session.set('room_id',this._id);
+//            console.log(room_id);
+            // do jquery stuff to show the chatrooms in tab format
+        },
         'click .submit_chat' : function (evt, tmpl){
             // probably set a session variable that refers to the
             // appropriate chat room
@@ -62,7 +67,7 @@
         }
     };
 
-    Template.dashboard.showRooms = function(){
+    Template.chat.showRooms = function(){
     // example json response (mongo) for available chat rooms
         return [
             { _id : 'asv-sasz', title: 'Chat room 1', location: 'San Francisco'},
@@ -71,11 +76,6 @@
     }
 
     Template.dashboard.events({
-        'click .show_chatroom' : function(evt,tmpl){
-            Session.set('room_id',this._id);
-//            console.log(room_id);
-            // do jquery stuff to show the chatrooms in tab format
-        },
         'click .show_profile' : function(){
             alert('show profile using userId');
             // do jquery stuff to show the chatrooms in tab format
