@@ -8,13 +8,21 @@ Template.questions.answers = function() {
   return Answers.find({ user_id: Meteor.userId() });
 };
 
+Template.questions.events({
+  'submit .new-question': function(e) {
+    Meteor.call("ask", { text: $("input[name=text]").val() }, function(error, id) {
+    });
+    e.preventDefault();
+  }
+});
+
 Template.question.answer = function() {
   var answer = Answers.findOne({
     question_id: this._id,
     user_id: Meteor.user()._id });
   if (answer !== undefined) {
     return answer
-  } else {Id
+  } else {
     return { answer: undefined }
   }
 };

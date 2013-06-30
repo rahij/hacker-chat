@@ -8,4 +8,24 @@
   <ul class="answers">
     {{#each answers}}{{> answer}}{{/each}}
   </ul>
+
+  <form class="new-question">
+    <fieldset>
+      <legend>Find people to talk to</legend>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <label>What do you want to ask?</label>
+          <input type="text" name="text" placeholder="Do you... ?">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <input type="submit" class="button" value="Ask">
+        </div>
+      </div>
+    </div>
+  </form>
 </template>
+

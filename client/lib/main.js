@@ -58,8 +58,7 @@
             console.log(q.length);
             for(var i = 0; i < q.length; i++){
                 console.log(q[i]);
-                var author = Meteor.users.findOne({ _id: q[i].user_id });
-                z.push({email:author.emails[0].address, msg:q[i].msg});
+                z.push({email:email, msg:q[i].msg});
             }
             console.log(z);
             return z;
@@ -69,7 +68,9 @@
     };
 
     Template.chat.showRooms = function(){
-      return rooms.find();
+      return rooms.find({ $where: function() {
+        return this.users.indexOf(Meteor.userId()) > -1;
+      }});
     }
 
     Template.dashboard.events({
