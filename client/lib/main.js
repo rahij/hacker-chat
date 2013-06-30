@@ -1,26 +1,6 @@
-Template.footer.rendered= function(){
-// hide all objects that are not to be shown when logged in
-    // $('.chat').hide();
-    
-    
-    $('.profile').hide();
-    
-    $('.add_announcements').hide();
-    
-    $('.new_announcement').hide();
-
-    // check that user has a profile if not show inital survey
-    $('.initialSurvey').hide();
-    
-};
-
 Template.twitter.rendered = function() {
 
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-}
-
-Template.chat.rendered = function() {
-  $(".chat-new-message-content").focus();
 }
 
 Template.chat.events({
