@@ -26,6 +26,12 @@
     </form>
   </div>
 
+  <ul>
+    {{#each profiles}}
+      <li>{{name}}</li>
+    {{/each}}
+  </ul>
+
   <p>
     Add more people to this room:
     <input type="search" name="search" placeholder="Search by name, email, school, company...">

@@ -35,6 +35,13 @@ Template.chat.events({
   }
 });
 
+Template.chat.profiles = function() {
+  if (Session.get("room_id")) {
+    var users = rooms.findOne({ _id: Session.get("room_id") }).users;
+    return profiles.find({ user_id: { $in: users } });
+  };
+};
+
 Template.chat.getMessages = function(){
     var room_id = Session.get('room_id');
     
