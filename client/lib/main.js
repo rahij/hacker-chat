@@ -16,12 +16,13 @@ Template.chat.events({
               chat.insert({msg : msg, room_id:room_id,user_id :user.emails[0].address});
               }
       }
+      Session.set("render", "#chat");
       evt.preventDefault();
-      return false;
   },
 
   'change input[name=search]': function() {
     $(".results-list").html(Meteor.render(Template.addUsers));
+    Session.set("render", "#chat");
   }
 });
 
@@ -52,11 +53,14 @@ Template.main.activeRooms = function(){
 };
 
 Template.main.rendered = function() {
+  $('.new_announcement').hide();
   $("section").hide();
-  $("section#dashboard").show();
-  // if (Session.get("room_id")) {
-  //   $("a[data-room-id=" + Session.get("room_id") + "] li").addClass("active");
-  // }
+  if(Session.get("render")) {
+    $(Session.get("render")).show();
+    Session.set("render", undefined);
+  } else {
+    $("section#dashboard").show();
+  }
 };
 
 Template.main.events({
@@ -99,6 +103,7 @@ Template.new_announcement.events({
     announcements.insert({msg: msg, user_id: Meteor.userId(), createdAt: new Date()});
     //What does pepsi wild cherry taste like with crown royal?
     $('.new_announcement').hide();
+    Session.set("render", "#announcements");
   }
 });
 
