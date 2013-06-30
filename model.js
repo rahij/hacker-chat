@@ -17,6 +17,7 @@ Meteor.methods({
   ask: function(params) {
     var room_id = rooms.insert({
       title: params.text,
+      createdBy: Meteor.user()._id,
       users: []
     });
 
