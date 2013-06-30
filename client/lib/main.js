@@ -57,6 +57,7 @@ Template.main.rendered = function() {
   $("section").hide();
   if(Session.get("render")) {
     $(Session.get("render")).show();
+    Session.set("render", undefined);
   } else {
     $("section#dashboard").show();
   }
