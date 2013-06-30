@@ -6,7 +6,7 @@ Template.twitter.rendered = function() {
   };
 }
 
-toLink = function(url){window.location.replace(url)};
+toLink = function(url){window.open(url)};
 
 Template.chat.events({
   'click .submit_chat' : function (evt, tmpl){
