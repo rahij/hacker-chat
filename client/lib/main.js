@@ -4,7 +4,7 @@
         $('.profile').hide();
         // check that user has a profile if not show inital survey
         
-        $('.initialSurvey').hide();
+        // $('.initialSurvey').hide();
         
     };
 
@@ -41,29 +41,13 @@
         
         if(room_id){
             var q =chat.find({room_id : room_id}).fetch();
-            
-            console.log(q);
-            
-//            Meteor.user.currentUserEmail()
-            var email = Meteor.users.findOne({_id:Meteor.userId()});
-            // ({}).emails[0].address
-//            Meteor.email();
-            email = email.emails[0].address;
-//            console.log(email[0]);
-            console.log(email);
-            
             var z = [];
-            
-//            var z = [];
-            console.log(q.length);
+            console.log(q);
             for(var i = 0; i < q.length; i++){
                 console.log(q[i]);
                 z.push({email:email, msg:q[i].msg});
             }
-            console.log(z);
             return z;
-            
-            
         }
     };
 
@@ -72,6 +56,11 @@
         return this.users.indexOf(Meteor.userId()) > -1;
       }});
     }
+
+
+    Template.announcements.getMsg = function (){
+        return announcements.find({});
+    };
 
     Template.dashboard.events({
         'click .show_profile' : function(){
