@@ -6,6 +6,8 @@ Template.twitter.rendered = function() {
   };
 }
 
+toLink = function(url){window.location.replace(url)};
+
 Template.chat.events({
   'click .submit_chat' : function (evt, tmpl){
       // probably set a session variable that refers to the
