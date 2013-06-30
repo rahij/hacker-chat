@@ -58,13 +58,21 @@ Template.main.activeRooms = function(){
 Template.main.rendered = function() {
   $('.new_announcement').hide();
   $("section").hide();
+  $(".side-menu li").removeClass("active");
 
   console.log(Session.get("render"));
   if(Session.get("render")) {
     $(Session.get("render")).show();
+
+    if(Session.get("room_id")) {
+      $(".side-menu a[data-room-id=" + Session.get("room_id") + "] li").addClass("active");
+    } else {
+      $(".side-menu a[data-target=" + Session.get("render") + "] li").addClass("active");
+    }
   } else {
     $("section#dashboard").show();
   }
+
 };
 
 Template.main.events({
