@@ -1,11 +1,20 @@
 <template name="initialSurvey">
-  <form class="custom profile reveal-modal">
-    <input type="text" name="name" placeholder="Name" />
-    <input type="text" name="school" placeholder="School" />
-    <input type="text" name="company" placeholder="Company" />
-    <input type="text" name="title" placeholder="Job Title" />
-    <input type="text" name="bio" placeholder="Bio/About Me" />
-    <input type="submit" value="Save Profile" class="button">
-    <a class="close-reveal-modal">&#215;</a>
-  </form>
+  {{#if hasProfile}}
+    {{#with profile}}
+      <p>Name: {{name}}</p>
+      <p>School: {{school}}</p>
+      <p>Company: {{company}}</p>
+      <p>Title: {{title}}</p>
+      <p>Bio/About me: {{bio}}</p>
+    {{/with}}
+  {{else}}
+    <form class="custom profile">
+      <input type="text" name="name" placeholder="Name" />
+      <input type="text" name="school" placeholder="School" />
+      <input type="text" name="company" placeholder="Company" />
+      <input type="text" name="title" placeholder="Job Title" />
+      <input type="text" name="bio" placeholder="Bio/About Me" />
+      <input type="submit" value="Save Profile" class="button">
+    </form>
+  {{/if}}
 </template>

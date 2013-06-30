@@ -1,6 +1,10 @@
-Template.initialSurvey.rendered = function() {
+Template.initialSurvey.hasProfile = function() {
+  return profiles.find({ user_id: Meteor.userId() }).count() > 0;
+};
 
-}
+Template.initialSurvey.profile = function() {
+  return profiles.findOne({ user_id: Meteor.userId() });
+};
 
 Template.initialSurvey.events({
   'submit .profile': function(e) {
@@ -11,7 +15,7 @@ Template.initialSurvey.events({
       title: $(".profile input[name=title]").val(),
       bio: $(".profile input[name=bio]").val()
     });
-    $("form.profile").foundation("reveal", "close");
+    Session.set("render", "#dashboard");
     e.preventDefault();
   }
 });
