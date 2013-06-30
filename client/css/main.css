@@ -165,6 +165,10 @@ ul.questions .button, ul.answers .button {
 	float: left;
 }
 
+.twitter iframe{
+	width : 518px;
+}
+
 .instagram{
 	float: left;
 	width: 50px;

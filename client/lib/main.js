@@ -17,6 +17,7 @@ Template.chat.events({
               }
       }
       evt.preventDefault();
+      return false;
   },
 
   'change input[name=search]': function() {
@@ -52,10 +53,10 @@ Template.main.activeRooms = function(){
 
 Template.main.rendered = function() {
   $("section").hide();
-  $("section#chat").show();
-  if (Session.get("room_id")) {
-    $("a[data-room-id=" + Session.get("room_id") + "] li").addClass("active");
-  }
+  $("section#dashboard").show();
+  // if (Session.get("room_id")) {
+  //   $("a[data-room-id=" + Session.get("room_id") + "] li").addClass("active");
+  // }
 };
 
 Template.main.events({
