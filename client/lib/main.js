@@ -3,7 +3,8 @@
         // $('.chat').hide();
         $('.profile').hide();
         // check that user has a profile if not show inital survey
-        $('.inital_survey').hide();
+        
+        $('.initialSurvey').hide();
         
     };
 
@@ -18,9 +19,7 @@
         'click .submit_chat' : function (evt, tmpl){
             // probably set a session variable that refers to the
             // appropriate chat room
-            alert('you are writing to chat database ');
             var room_id = Session.get('room_id'), user_id = Meteor.userId();
-                
             if(room_id && user_id){
                 msg = tmpl.find('.chat-new-message-content').value;
                 if(msg){
@@ -28,14 +27,13 @@
                     chat.insert({msg : msg, room_id:room_id,user_id :user_id});
                     }
             }
-            
-//            console.log(tmpl.find(".chat-new-message-content").value);
         }
 
     });
 
     Template.chat.getMessages = function(){
         var room_id = Session.get('room_id');
+        
         if(room_id){
             return chat.find({room_id : room_id});
         }
@@ -51,12 +49,9 @@
 
     Template.dashboard.events({
         'click .show_chatroom' : function(evt,tmpl){
-            // var room_id = tmpl.find('.show_chatroom').id;
-            var room_id = evt.srcElement.id;
-            console.log(room_id);
-            alert('setting session to ' + room_id);
-            Session.set('room_id',room_id);
-            console.log(room_id);
+            Session.set('room_id',this._id);
+            console.log(this);
+//            console.log(room_id);
             // do jquery stuff to show the chatrooms in tab format
             alert('show chat rooms based on all available chat rooms');
         },
