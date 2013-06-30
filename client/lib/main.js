@@ -55,9 +55,10 @@ Template.main.activeRooms = function(){
 Template.main.rendered = function() {
   $('.new_announcement').hide();
   $("section").hide();
+
+  console.log(Session.get("render"));
   if(Session.get("render")) {
     $(Session.get("render")).show();
-    Session.set("render", undefined);
   } else {
     $("section#dashboard").show();
   }
@@ -65,6 +66,8 @@ Template.main.rendered = function() {
 
 Template.main.events({
   'click .side-menu a': function(e) {
+    Session.set("render", "#" + $(e.target).parent().data("target"));
+
     $("section").hide();
     $("section#" + $(e.target).parent().data("target")).show();
 
