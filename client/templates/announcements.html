@@ -2,7 +2,7 @@
 	<div class="announcements">
         <ul>
         {{#each getAnnouncements}}
-            <li>{{{msg}}}</li>
+          <li>{{{msg}}}<span data-livestamp="{{createdAt}}"></span></li>
         {{/each}}
         </ul>
 	<div>

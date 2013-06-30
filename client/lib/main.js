@@ -44,6 +44,13 @@ Template.chat.events({
   }
 });
 
+Template.chat.profiles = function() {
+  if (Session.get("room_id")) {
+    var users = rooms.findOne({ _id: Session.get("room_id") }).users;
+    return profiles.find({ user_id: { $in: users } });
+  };
+};
+
 Template.chat.getMessages = function(){
     var room_id = Session.get('room_id');
     
@@ -97,7 +104,7 @@ Template.announcements.events({
 });
 
 Template.announcements.getAnnouncements = function(){
-    return announcements.find();
+    return announcements.find({}, { sort: { createdAt: -1 } });
 }
 
 Template.new_announcement.events({
@@ -108,7 +115,7 @@ Template.new_announcement.events({
   'click .add_announcement': function(evt,tmpl){
     evt.preventDefault();
     var msg=tmpl.find(".msg").value;
-    announcements.insert({msg:msg,user_id: Meteor.userId()});
+    announcements.insert({msg: msg, user_id: Meteor.userId(), createdAt: new Date()});
     //What does pepsi wild cherry taste like with crown royal?
     $('.new_announcement').hide();
   }
@@ -122,20 +129,12 @@ Template.dashboard.events({
         // from here go to settings template ....
     },
     
-    'click .show_settings' : function(){
-        
-    
-    },
-    
     'click .show_announcements' : function(){
-        $('.announcements').show();
-    
+      $('.announcements').show();
     },
     
     'click .new_announcements' : function(){
-        
-        $('.new_announcement').show();
-    
+      $('.new_announcement').show();
     }
 });
 

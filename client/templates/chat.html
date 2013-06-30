@@ -1,13 +1,4 @@
 <template name="chat">
-  <p>
-    Add more people to this room:
-    <input type="search" name="search" placeholder="Add people by name, email, school, company...">
-  </p>
-
-  <div class="results-list">
-    {{> addUsers}}
-  </div>
-
   <div class="row chat-messages">
     <div class="small-12 columns">
       {{#each getMessages}}
@@ -33,5 +24,20 @@
         <input type="submit" value="Submit" class="button small inline radius expand submit_chat"/> 
       </div>
     </form>
+  </div>
+
+  <ul>
+    {{#each profiles}}
+      <li>{{name}}</li>
+    {{/each}}
+  </ul>
+
+  <p>
+    Add more people to this room:
+    <input type="search" name="search" placeholder="Search by name, email, school, company...">
+  </p>
+
+  <div class="results-list">
+    {{> addUsers}}
   </div>
 </template>
