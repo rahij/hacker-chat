@@ -1,0 +1,12 @@
+<template name="addUsers">
+  <p>
+    What are you looking for?
+    <input type="search" name="search">
+  </p>
+
+  <ul>
+    {{#each searchResults}}
+      {{> addUser}}
+    {{/each}}
+  </ul>
+</template>

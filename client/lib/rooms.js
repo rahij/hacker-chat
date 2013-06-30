@@ -9,3 +9,19 @@ Template.newRoom.events({
     e.preventDefault();
   }
 });
+
+Template.addUsers.searchResults = function() {
+  return profiles.find();
+};
+
+Template.addUsers.events({
+  'click a[data-user-id]': function(e) {
+    var room = rooms.findOne(Session.get("room_id"));
+    var user_id = $(e.srcElement).data("user-id");
+    if(room.users.indexOf(user_id) < 0) {
+      room.users.push(user_id);
+      rooms.update(room._id, { $set: { users: room.users } });
+    }
+  }
+});
+
