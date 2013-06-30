@@ -13,6 +13,10 @@
 	width: 20%;
 }
 
+.chat-sidebar a{
+	display: block;
+}
+
 .chat-main-view{
 	width: 80%;
 	height: 100%;

@@ -4,10 +4,16 @@
 
 <body>
   {{> header}}
+  
+  {{#if currentUser}}
   {{> dashboard}}
 
   {{> questions}}
   
+  {{> initialSurvey}}
+
+  
+  {{/if}}
+  
   {{> footer}}
-  {{> modals}}
 </body>
