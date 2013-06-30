@@ -1,7 +1,5 @@
 Template.initialSurvey.rendered = function() {
-  if(Meteor.userId() && profiles.findOne({ user_id: Meteor.userId() }) === undefined) {
-    $("form.profile").foundation("reveal", "open").find("form").show();
-  };
+
 }
 
 Template.initialSurvey.events({
