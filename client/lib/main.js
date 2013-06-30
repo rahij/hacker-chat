@@ -30,6 +30,11 @@ Template.chat.events({
                 chat.insert({msg : msg, room_id:room_id,user_id :user.emails[0].address});
                 }
         }
+    },
+    'click .side-menu a' : function(evt, tmpl){
+        console.log(evt.srcElement);
+        $(".side-menu li").removeClass("active");
+        $(evt.srcElement).addClass('active');
     }
 
 });
