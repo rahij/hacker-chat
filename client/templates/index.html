@@ -4,9 +4,15 @@
 
 <body>
   {{> header}}
+  
+  {{#if currentUser}}
   {{> dashboard}}
   {{> chat}}
   
-  {{> footer}}
   {{> modals}}
+
+  
+  {{/if}}
+  
+  {{> footer}}
 </body>

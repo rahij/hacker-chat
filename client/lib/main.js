@@ -8,7 +8,7 @@
         
     };
 
-    Template.modals.events({
+    Template.initialSurvey.events({
         'click .submit_survey' : function (){
             alert('you are submitting your inital survey');
         }
