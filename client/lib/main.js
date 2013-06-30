@@ -27,7 +27,6 @@
                     console.log('inserting');
                     chat.insert({msg : msg, room_id:room_id,user_id :user_id});
                     }
-                
             }
             
 //            console.log(tmpl.find(".chat-new-message-content").value);
@@ -52,8 +51,8 @@
 
     Template.dashboard.events({
         'click .show_chatroom' : function(evt,tmpl){
-            console.log(tmpl.data);
-            var room_id = tmpl.find('.show_chatroom').id;
+            // var room_id = tmpl.find('.show_chatroom').id;
+            var room_id = evt.srcElement.id;
             console.log(room_id);
             alert('setting session to ' + room_id);
             Session.set('room_id',room_id);
