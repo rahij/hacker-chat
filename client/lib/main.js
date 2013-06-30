@@ -14,10 +14,6 @@ Template.footer.rendered= function(){
     
 };
 
-Template.chat.rendered = function() {
-  $(".chat-new-message-content").focus();
-}
-
 Template.chat.events({
   'click .submit_chat' : function (evt, tmpl){
       // probably set a session variable that refers to the
