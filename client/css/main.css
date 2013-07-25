@@ -115,6 +115,12 @@ ul.side-menu {
 	border-left: 10px solid #fd3f1b;
 }
 
+.side-menu li img {
+	display: inline-block;
+	max-width: 20px;
+	margin-right: 10px;
+	margin-top: -2px;
+}
 
 
 .row.chat-messages {
@@ -144,4 +150,43 @@ ul.questions, ul.answers {
 
 ul.questions .button, ul.answers .button {
 	margin-right: 5px;
+}
+
+.chat-messages .row {
+  margin-bottom: 20px;
+}
+
+.chat-messages .avatar img {
+  border-radius: 100%;
+  border: 1px solid #ddd;
+  max-width: 50px;
+}
+
+.twitter{
+	float: left;
+}
+
+.twitter iframe{
+	width : 518px;
+}
+
+.instagram{
+	float: left;
+	width: 50px;
+	padding-left: 10px;
+}
+
+
+.announcements ul {
+	list-style: none;
+}
+
+.announcements ul li {
+	padding: 10px;
+	margin: 5px auto;
+	border: 1px solid #aaa;
+}
+
+.announcements ul li span {
+	float: right;
 }

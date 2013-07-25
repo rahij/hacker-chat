@@ -11,6 +11,7 @@ Template.questions.answers = function() {
 Template.questions.events({
   'submit .new-question': function(e) {
     Meteor.call("ask", { text: $("input[name=text]").val() }, function(error, id) {
+      Session.set("render", "#polls");
     });
     e.preventDefault();
   }
@@ -31,6 +32,7 @@ Template.question.events({
   'click .answer': function(e) {
     var answer = $(e.toElement).data("answer");
     Meteor.call("answer", { question_id: this._id, answer: answer }, function(error, id) {
+      Session.set("render", "#polls");
     });
   }
 });

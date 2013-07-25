@@ -1,29 +1,43 @@
 <template name="chat">
-  <p>
-    Add more people to this room:
-    <input type="search" name="search" placeholder="Search by name, school, company...">
-  </p>
-
-  <div class="results-list">
-    {{> addUsers}}
-  </div>
-
   <div class="row chat-messages">
     <div class="small-12 columns">
       {{#each getMessages}}
         <div class="row">
+          <div class="large-1 columns avatar">
+            <img src="http://gravatar.com/avatar/{{emailHash}}"/>
+          </div>
+  
+          <div class="large-11 columns message">
             <span class="name {{user_id}}" id="{{_id}}">{{user_id}}:</span>
             <span class="chat-single-message-content">{{msg}}</span>
+          </div>
         </div>
       {{/each}}
     </div>
   </div>
   <div class="row chat-new-message">
-    <div class="large-10 columns">
-      <input type="text" class="chat-new-message-content">
-    </div>
-    <div class="large-2 columns">
-      <input type="submit" value="Submit" class="button small inline radius expand submit_chat"/> 
-    </div>
+    <form class="new-message">
+      <div class="large-10 columns">
+        <input type="text" class="chat-new-message-content">
+      </div>
+      <div class="large-2 columns">
+        <input type="submit" value="Submit" class="button small inline radius expand submit_chat"/> 
+      </div>
+    </form>
+  </div>
+
+  <ul>
+    {{#each profiles}}
+      <li>{{name}}</li>
+    {{/each}}
+  </ul>
+
+  <p>
+    Add more people to this room:
+    <input type="search" name="search" placeholder="Search by name, email, school, company...">
+  </p>
+
+  <div class="results-list">
+    {{> addUsers}}
   </div>
 </template>

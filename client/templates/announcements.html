@@ -2,22 +2,22 @@
 	<div class="announcements">
         <ul>
         {{#each getAnnouncements}}
-            <li>{{{msg}}}</li>
+          <li>{{{msg}}}<span data-livestamp="{{createdAt}}"></span></li>
         {{/each}}
         </ul>
 	<div>
 </template>
 
-
 <template name ="new_announcement">
-    <div class="new_announcement">
-        <form class="new_announcement">
-            <input class="msg" placeholder="Type in announcement (html permitted)" />
-            <input type="submit" class = "add_announcement" />
-            <input type="radio" class="visibility" value='true' />True
-            <input type="radio" class="visibility" value='false' />False
-            
-            <a href="#" class="cancel" >Cancel</a>
-        </form>
-    </div>
+  <div class="row new_announcement">
+    <form class="new_announcement">
+      <div class="small-9 columns">
+        <input type="text" class="expand msg" placeholder="New Announcement..." />
+      </div>
+      <div class="small-3 columns">
+        <input type="submit" class="button small inline radius add_announcement" />
+        <a href="#" class="cancel">Cancel</a>
+      </div>
+    </form>
+  </div>
 </template>
