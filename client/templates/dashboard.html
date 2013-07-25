@@ -1,9 +1,18 @@
 <template name="dashboard">
-<div class="dashboard">
-    <a href="#" class="show_announcements">Show Announcements</a>
+  <div class="dashboard">
+    <a href="#" class="button small inline radius expand new_announcements">Add Announcement</a>
+    {{> new_announcement}}
+  </div>
+</template>
 
-    <a href="#" class="new_announcements">Add Announcement</a>
+<template name="twitter">
+	<div class="twitter">
+		<a class="twitter-timeline" href="https://twitter.com/search?q=%23hack" data-widget-id="351383370695053314">Tweets about "#hack"</a>
+	</div>
+</template>
 
-
-</div>
+<template name="instagram">
+	<div class="instagram">
+		<iframe src="http://snapwidget.com/in/?h=aGFja2F0aG9ufGlufDg1fDJ8NXx8eWVzfDV8bm9uZQ==" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:200px; height: 500px" ></iframe>
+	</div>
 </template>

@@ -4,6 +4,9 @@ Template.newRoom.events({
       title: $(".new-room input[name=title]").val(),
       createdBy: Meteor.userId(),
       users: [Meteor.userId()]
+    }, function(error, id) {
+      Session.set("room_id", id);
+      Session.set("render", "#chat");
     });
 
     e.preventDefault();
